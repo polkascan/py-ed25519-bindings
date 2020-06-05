@@ -28,7 +28,7 @@ docker run --rm -i -v $(pwd):/io polkasource/maturin build
 
 ```
 
-## Examples
+## Usage
 
 ```python
 import bip39
