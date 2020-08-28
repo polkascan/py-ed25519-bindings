@@ -1,6 +1,10 @@
 # py-ed25519-bindings
 Python bindings for the ed25519-dalek RUST crate 
 
+## Documentation
+
+https://docs.rs/py-ed25519-bindings
+
 ## Installation
 
 ### Install from PyPI
