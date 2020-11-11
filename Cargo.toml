@@ -10,7 +10,7 @@ readme = "README.md"
 edition = "2018"
 
 [dependencies]
-ed25519-dalek = { version = "1.0.0", features = ["nightly"] }
+ed25519-dalek = { version = "1.0.1", features = ["nightly"] }
 rand = "0.6.5"
 
 [lib]
