@@ -34,8 +34,8 @@ jobs:
           pip install maturin
           maturin build -i python3.8
       - name: Install requirements
-          run: |
-            pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
       - name: Install bindings
         run: |
           pip install target/wheels/*.whl
