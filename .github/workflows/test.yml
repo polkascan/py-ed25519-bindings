@@ -33,7 +33,7 @@ jobs:
         id: rustup
         with:
           profile: minimal
-          toolchain: nightyly
+          toolchain: nightly
           override: true
       - name: Build bindings
         run: |
