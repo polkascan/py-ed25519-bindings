@@ -38,7 +38,10 @@ jobs:
       - name: Build bindings
         run: |
           pip install maturin
-          maturin develop
+          maturin build
+      - name: Install bindings
+        run: |
+          pip install target/wheels/*.whl
       - name: Test with pytest
         run: |
           pip install pytest
