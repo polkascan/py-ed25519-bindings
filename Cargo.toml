@@ -2,7 +2,7 @@
 name = "py-ed25519-bindings"
 description = "Python bindings for the ed25519-dalek RUST crate"
 authors=["Stichting Polkascan (Polkascan Foundation)"]
-version = "0.1.2"
+version = "0.1.3"
 repository = "https://github.com/polkascan/py-ed25519-bindings"
 homepage = "https://github.com/polkascan/py-ed25519-bindings"
 license = "Apache-2.0"
