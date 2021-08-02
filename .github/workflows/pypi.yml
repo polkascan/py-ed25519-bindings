@@ -32,16 +32,16 @@ jobs:
         with:
           maturin-version: latest
           target: x86_64
-          args: --release --out dist
+          args: --release --out output
       - name: Build wheels - universal2
         uses: messense/maturin-action@v1
         with:
-          args: --release --universal2 --out dist --no-sdist
+          args: --release --universal2 --out output --no-sdist
       - name: Upload wheels
         uses: actions/upload-artifact@v2
         with:
           name: wheels
-          path: dist
+          path: output
 
   windows:
     runs-on: windows-latest
