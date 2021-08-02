@@ -17,7 +17,7 @@
 import unittest
 
 import bip39
-import ed25519
+import ed25519_dalek
 
 
 class MyTestCase(unittest.TestCase):
@@ -27,33 +27,33 @@ class MyTestCase(unittest.TestCase):
 
         # Get private and public key from seed
         seed = bip39.bip39_to_mini_secret('daughter song common combine misery cotton audit morning stuff weasel flee field','')
-        private_key, public_key = ed25519.ed_from_seed(bytes(seed))
+        private_key, public_key = ed25519_dalek.ed_from_seed(bytes(seed))
 
         # Generate signature
-        signature = ed25519.ed_sign(public_key, private_key, message)
+        signature = ed25519_dalek.ed_sign(public_key, private_key, message)
 
         # Verify message with signature
-        self.assertTrue(ed25519.ed_verify(signature, message, public_key))
+        self.assertTrue(ed25519_dalek.ed_verify(signature, message, public_key))
 
     def test_verify_invalid_signature(self):
         # Get private and public key from seed
         seed = bip39.bip39_to_mini_secret(
             'daughter song common combine misery cotton audit morning stuff weasel flee field', '')
-        private_key, public_key = ed25519.ed_from_seed(bytes(seed))
+        private_key, public_key = ed25519_dalek.ed_from_seed(bytes(seed))
 
         # Verify message with signature
-        self.assertFalse(ed25519.ed_verify(bytes(32), b"test", public_key))
+        self.assertFalse(ed25519_dalek.ed_verify(bytes(32), b"test", public_key))
 
     def test_invalid_seed_length(self):
-        self.assertRaises(ValueError, ed25519.ed_from_seed, bytes(1))
+        self.assertRaises(ValueError, ed25519_dalek.ed_from_seed, bytes(1))
 
     def test_sign_invalid_pub_key_length(self):
         # Get private and public key from seed
         seed = bip39.bip39_to_mini_secret(
             'daughter song common combine misery cotton audit morning stuff weasel flee field', '')
-        private_key, _ = ed25519.ed_from_seed(bytes(seed))
+        private_key, _ = ed25519_dalek.ed_from_seed(bytes(seed))
 
-        self.assertRaises(ValueError, ed25519.ed_sign, bytes(1), private_key, b"test")
+        self.assertRaises(ValueError, ed25519_dalek.ed_sign, bytes(1), private_key, b"test")
 
 
 if __name__ == '__main__':
