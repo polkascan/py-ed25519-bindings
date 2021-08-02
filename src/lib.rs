@@ -146,7 +146,7 @@ pub fn ed_verify(signature: &[u8], message: &[u8], public: &[u8]) -> bool {
 
 /// This module is a Python module implemented in Rust.
 #[pymodule]
-fn ed25519(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+fn ed25519_dalek(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(ed_from_seed))?;
     m.add_wrapped(wrap_pyfunction!(ed_sign))?;
     m.add_wrapped(wrap_pyfunction!(ed_verify))?;

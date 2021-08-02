@@ -1,5 +1,5 @@
 # py-ed25519-bindings
-Python bindings for the ed25519-dalek RUST crate 
+Python bindings for the [ed25519-dalek RUST crate](https://crates.io/crates/ed25519-dalek/1.0.1) 
 
 ## Documentation
 
@@ -36,20 +36,20 @@ docker run --rm -i -v $(pwd):/io polkasource/maturin build
 
 ```python
 import bip39
-import ed25519
+import ed25519_dalek
 
 message = b"test"
 
 # Get private and public key from seed
 seed = bip39.bip39_to_mini_secret('daughter song common combine misery cotton audit morning stuff weasel flee field','')
-private_key, public_key = ed25519.ed_from_seed(bytes(seed))
+private_key, public_key = ed25519_dalek.ed_from_seed(bytes(seed))
 
 # Generate signature
-signature = ed25519.ed_sign(public_key, private_key, message)
+signature = ed25519_dalek.ed_sign(public_key, private_key, message)
 print(signature.hex())
 
 # Verify message with signature
-if ed25519.ed_verify(signature, message, public_key):
+if ed25519_dalek.ed_verify(signature, message, public_key):
     print('Verified')
 
 ```
