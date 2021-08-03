@@ -32,7 +32,7 @@ jobs:
         with:
           maturin-version: latest
           target: x86_64
-          args: --release --out output
+          args: --release --out output --no-sdist
       - name: Build wheels - universal2
         uses: messense/maturin-action@v1
         with:
