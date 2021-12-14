@@ -45,6 +45,7 @@ jobs:
           pip install py-ed25519-bindings --no-index --find-links dist --force-reinstall
       - name: Python UnitTest
         run: |
+          pip install -r requirements.txt
           pip install pytest
           pytest tests.py
       - name: Upload wheels
@@ -87,6 +88,7 @@ jobs:
           pip install py-ed25519-bindings --no-index --find-links dist --force-reinstall
       - name: Python UnitTest
         run: |
+          pip install -r requirements.txt
           pip install pytest
           pytest tests.py
       - name: Upload wheels
@@ -125,6 +127,7 @@ jobs:
         if: matrix.target == 'x86_64'
         run: |
           pip install py-ed25519-bindings --no-index --find-links dist --force-reinstall
+          pip install -r requirements.txt
           pip install pytest
           pytest tests.py
       - name: Upload wheels
