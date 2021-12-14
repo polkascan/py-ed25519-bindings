@@ -28,7 +28,7 @@ maturin build
 
 # Build manylinux1 wheelhouse
 docker build . --tag polkasource/maturin
-docker run --rm -i -v $(pwd):/io polkasource/maturin build
+docker run --rm -i -v $(pwd):/io konstin2/maturin build
 
 ```
 
