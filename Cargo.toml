@@ -7,7 +7,7 @@ repository = "https://github.com/polkascan/py-ed25519-bindings"
 homepage = "https://github.com/polkascan/py-ed25519-bindings"
 license = "Apache-2.0"
 readme = "README.md"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 ed25519-dalek = { version = "1.0.1", features = ["nightly"] }
