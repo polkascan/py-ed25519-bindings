@@ -41,11 +41,11 @@ class MyTestCase(unittest.TestCase):
             'daughter song common combine misery cotton audit morning stuff weasel flee field', '')
         private_key, public_key = ed25519_dalek.ed_from_seed(bytes(seed))
 
-        signature = bytes.fromhex("6168a361ec4d5f0bc78d2f1db1ea59b1516baf149e75d1a9b9732b16834c6f71"
-                                  "843dec967c6399c570ae014fd44a06ca4332f7bf562faf9134a20d169380a003")
+        signature = bytes.fromhex("33185bf9e8f6b354751ef7c7a7c692b3d51d5096e52c4c08e8b307f804d025f3"
+                                  "f14a060b8c1ad11f92fe0be4cae2c620d86d6012f90d071fb8dbadac2774df02")
 
         # Verify message with signature
-        self.assertFalse(ed25519_dalek.ed_verify(signature, b"test", public_key))
+        self.assertTrue(ed25519_dalek.ed_verify(signature, b"test", public_key))
 
     def test_verify_invalid_signature(self):
         # Get private and public key from seed
