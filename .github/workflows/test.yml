@@ -27,7 +27,7 @@ jobs:
         id: rustup
         with:
           profile: minimal
-          toolchain: nightly-2021-04-24
+          toolchain: nightly-2022-05-25
           override: true
       - name: Build bindings
         run: |
